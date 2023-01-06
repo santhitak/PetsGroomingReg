@@ -1,3 +1,12 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.bg-pets {
+  background-image: url("https://cdn.shopify.com/s/files/1/0089/2777/2753/files/RASPBERRY_BLOSSOM_BLOG_DOG_PATTERN_DESKTOP.jpg?v=1622541927");
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
