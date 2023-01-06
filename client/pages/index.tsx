@@ -2,6 +2,21 @@ import Head from "next/head";
 import Link from "next/link";
 
 export default function Home() {
+  const path = [
+    {
+      href: "/",
+      title: "Home",
+    },
+    {
+      href: "/",
+      title: "Information",
+    },
+    {
+      href: "/auth/register",
+      title: "Register",
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -15,15 +30,13 @@ export default function Home() {
           <div className="sticky top-0 pt-6 px-20">
             <div className="w-full bg-gray-200 h-16 rounded-lg flex justify-center items-center">
               <div className="flex justify-center space-x-10 text-gray-600 font-semibold underline-offset-2">
-                <Link href={"/"} className="hover:underline">
-                  Home
-                </Link>
-                <Link href={"/"} className="hover:underline">
-                  Information
-                </Link>
-                <Link href={"/auth/register"} className="hover:underline">
-                  Register
-                </Link>
+                {path.map(
+                  (item: { href: string; title: string }, i: number) => (
+                    <Link href={item.href} className="hover:underline" key={i}>
+                      {item.title}
+                    </Link>
+                  )
+                )}
               </div>
             </div>
           </div>
